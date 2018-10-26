@@ -1,0 +1,5 @@
+<p>
+  Belive I am button
+  <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
+  <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+</p>
