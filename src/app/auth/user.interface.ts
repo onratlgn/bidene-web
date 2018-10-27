@@ -5,6 +5,6 @@ export interface User {
     email: string;
     displayName: string;
     photoURL: string;
-    isStudio: boolean;
-    userCred: auth.UserCredential;
+    isKurs: boolean;
+    //userCred: auth.UserCredential;
 }

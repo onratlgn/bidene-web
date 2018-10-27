@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
-import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -20,4 +19,6 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router){}
+}
