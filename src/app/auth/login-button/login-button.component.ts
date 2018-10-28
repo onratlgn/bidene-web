@@ -9,8 +9,6 @@ import { User } from '../user.interface';
 })
 export class LoginButtonComponent implements OnInit {
 
-  user: User;
-
   constructor(
     public authService: AuthService
   ) { }
@@ -24,7 +22,6 @@ export class LoginButtonComponent implements OnInit {
     this.authService.loginWithGoogle().subscribe(() => {
       if (this.authService.isLoggedIn) {
         console.log('component confirmed login');
-        this.authService.user.subscribe(user => this.user = user);
       }
     });
   }

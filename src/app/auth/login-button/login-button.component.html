@@ -4,6 +4,6 @@
   <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
 </p>
 <p>
-    <button *ngIf="authService.isLoggedIn"> {{user.isKurs}} </button>
-    <img *ngIf="authService.isLoggedIn" [src]="user.photoURL" height="42">
+    <button *ngIf="authService.isLoggedIn"> {{authService.user.isKurs}} </button>
+    <img *ngIf="authService.isLoggedIn" [src]="authService.user.photoURL" height="42">
 </p>

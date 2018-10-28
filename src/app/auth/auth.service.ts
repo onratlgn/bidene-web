@@ -13,7 +13,7 @@ import { auth } from 'firebase/app';
 })
 export class AuthService {
 
-  user:Observable<User|null>;
+  user:User;
   // authState:FirebaseAuthState
   isLoggedIn:boolean= false;
 
@@ -28,7 +28,7 @@ export class AuthService {
     return from(this.afAuth.auth.signInWithPopup(provider)).pipe(
       switchMap((res => {
           if(res.user){
-            this.user=this.retrieveUser(res.user.uid);
+            this.retrieveUser(res.user.uid).subscribe(user => this.user = user);
             console.log(res.user.email + ' is authenticated');
             return of(true).pipe(
               tap(()=> this.isLoggedIn = true)
